@@ -1,0 +1,112 @@
+.footer {
+  background-color: $blue;
+  padding-top: 70px;
+
+  @include tab {
+      height: 100vh;
+      padding-top: 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include tab {
+        height: 100%;
+    }
+
+    h2 {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 140px;
+      @include tab {
+        display: none;
+      }
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+
+    @include tab {
+      flex-direction: column-reverse;
+      justify-content: space-around;
+      flex-grow: 1;
+    }
+  }
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20%;
+
+    @include tab {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    &-socials {
+        @include tab {
+            flex-direction: column;
+            align-items: center;
+            .contact-item {
+                img {
+                    margin: 0 !important;
+                }
+                p {
+                    display: none;
+                }
+            }
+            .wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+    }
+
+    h3 {
+      font-size: 20px;
+      color: $yellow;
+      margin-bottom: 60px;
+    }
+  }
+  .contact-item {
+    display: flex;
+    margin-bottom: 40px;
+    img {
+      margin-right: 25px;
+    }
+    p {
+      color: white;
+    }
+  }
+  &__logo {
+    max-width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+    }
+    p {
+      color: white;
+      text-align: center;
+    }
+  }
+  &__bottom {
+    border-top: 1px solid $yellow;
+    padding: 15px 0;
+    margin-top: auto;
+
+    p {
+      color: white;
+      @include tab {
+          text-align: center;
+      }
+      a {
+        color: $yellow;
+      }
+    }
+  }
+}

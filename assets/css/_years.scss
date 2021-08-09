@@ -1,0 +1,90 @@
+.years {
+  padding-top: 140px;
+  padding-bottom: 140px;
+
+  @include tab {
+    background: #fff6ef;
+    padding-top: 90px;
+    padding-bottom: 0;
+  }
+  &__container {
+    max-width: 1435px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    @include tab {
+      flex-direction: column;
+      width: fit-content;
+      // padding: 0 60px;
+    }
+  }
+  &__item {
+    width: 220px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include tab {
+      flex-direction: row;
+      width: fit-content;
+      height: fit-content;
+      margin-bottom: 50px;
+    }
+
+    h3 {
+      font-family: "nino-bold";
+      font-size: 30px;
+      margin-bottom: 20px;
+
+      @include tab {
+        margin: 0;
+        margin-right: 30px;
+      }
+    }
+
+    p {
+      @include tab {
+        font-size: 10px;
+      }
+    }
+  }
+  &__dot {
+    margin-top: auto;
+    width: 17px;
+    height: 17px;
+    background: #ff7d23;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    @include tab {
+      width: 11px;
+      height: 11px;
+      order: -1;
+      margin: 0;
+      margin-right: 10px;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgba($yellow, 0.5);
+    transition: width 0.6s;
+
+    @include tab {
+      height: 0;
+      width: 1px;
+      left: unset;
+      bottom: unset;
+      left: 5px;
+      top: 0;
+    }
+  }
+}

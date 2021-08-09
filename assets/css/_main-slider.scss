@@ -1,0 +1,154 @@
+.main-slider {
+  width: 100%;
+  height: calc(100vh - 140px);
+  position: relative;
+
+  @include xl {
+    height: calc(100vh - 100px);
+  }
+  @include tab {
+    height: calc(100vh - 50px);
+    padding: 0;
+  }
+  &__container {
+    height: calc(100% - 110px);
+
+    @include xl {
+      height: calc(100% - 55px);
+    }
+    @include tab {
+      height: 100%;
+    }
+
+    .swiper-slide {
+      @include tab {
+        width: 100% !important;
+        backdrop-filter: blur(0px);
+        --webkit-backdrop-filter: blur(0px);
+        background-color: rgba(0, 0, 0, 0.06);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .back {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba($color: black, $alpha: 0.2);
+
+        @include tab {
+          display: block;
+        }
+      }
+      h2 {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        width: 50%;
+        font-size: 50px;
+
+        @include tab {
+          font-size: 30px;
+          width: 100%;
+          bottom: 20%;
+          left: 10px;
+          right: 10px;
+          color: white;
+        }
+      }
+    }
+  }
+  &__prev {
+    width: 120px;
+    height: 120px;
+    backdrop-filter: blur(5px);
+    --webkit-backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.3);
+    left: 0;
+
+    @include xl {
+      width: 60px;
+      height: 60px;
+    }
+    @include tab {
+      left: 10px;
+    }
+
+    &::after {
+      color: $blue;
+      font-size: 16px;
+    }
+  }
+  &__next {
+    width: 120px;
+    height: 120px;
+    backdrop-filter: blur(5px);
+    --webkit-backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.3);
+    right: 0;
+
+    @include xl {
+      width: 60px;
+      height: 60px;
+    }
+    @include tab {
+      right: 10px;
+    }
+
+    &::after {
+      color: $blue;
+      font-size: 16px;
+    }
+  }
+  &__pagination {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 8px;
+    top: 45%;
+    transform: translateY(-45%);
+
+    @include tab {
+      display: none;
+    }
+
+    span {
+      border-radius: 0;
+      background: $blue;
+      opacity: 1;
+      margin: 25px 0;
+      &.swiper-pagination-bullet-active {
+        background: $yellow;
+      }
+    }
+  }
+  &__socials {
+    padding: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+
+    @include xl {
+      padding: 10px 0;
+    }
+    @include tab {
+      display: none;
+    }
+    a {
+      display: flex;
+      width: 70px;
+      height: 70px;
+      justify-content: center;
+      align-items: center;
+
+      @include xl {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}

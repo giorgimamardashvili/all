@@ -1,0 +1,51 @@
+@import "vars";
+@import "fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  border: 0;
+  resize: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-family: "Helv-rom", sans-serif;
+  color: $blue;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+.container {
+  // max-width: 1780px;
+  padding: 0 45px;
+
+  @include tab {
+    padding: 0 15px;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "nino-bold";
+}
+
+@import "header";
+@import "main-slider";
+@import "history";
+@import "years";
+@import "news";
+@import "questions";
+@import "resources";
+@import "footer";

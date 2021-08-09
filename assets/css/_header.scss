@@ -1,0 +1,103 @@
+.header {
+  height: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  @include xl {
+    height: 100px;
+  }
+  @include tab {
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: $yellow;
+  }
+  &__logo {
+    @include xl {
+      height: 100%;
+    }
+    img {
+      height: 100%;
+
+      @include tab {
+        content: url("../img/logo-mob.png");
+      }
+    }
+  }
+  &__nav {
+    @include tab {
+      display: none;
+    }
+    ul {
+      display: flex;
+      li {
+        margin: 0 20px;
+        a {
+          font-family: 'nino-norm';
+          display: block;
+          font-size: 18px;
+
+          @include xl {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  &__lang {
+    @include tab {
+      display: none;
+    }
+    &:hover {
+      a {
+        &:first-child {
+          opacity: 1;
+        }
+      }
+    }
+    a {
+      font-size: 20px;
+
+      @include xl {
+        font-size: 16px;
+      }
+      &.active {
+        color: $yellow;
+        margin-left: 10px;
+      }
+      &:first-child {
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+    }
+  }
+  &__burger {
+    display: none;
+    width: 16px;
+    height: 16px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include tab {
+      display: flex;
+    }
+
+    span {
+      height: 2px;
+      background-color: #fff;
+      &:first-child {
+        width: 70%;
+      }
+      &:nth-child(2) {
+        width: 40%;
+      }
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+}
